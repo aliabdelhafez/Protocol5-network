@@ -487,10 +487,10 @@ void protocol5(void)
 			}
 			else
 			{
-				nbuffered = nbuffered + 1;                                             /* expand the sender’s window */
+				nbuffered = nbuffered + 1;                                             /* expand the senderÂ’s window */
 				//the function must run sender timer
 				send_data(next_frame_to_send, frame_expected, buffer);                 /* transmit the frame */
-				inc(next_frame_to_send);                                               /* advance sender’s upper window edge */
+				inc(next_frame_to_send);                                               /* advance senderÂ’s upper window edge */
 			}
 			if ((nbuffered < MAX_SEQ))
 			{
@@ -508,7 +508,7 @@ void protocol5(void)
 				/* Frames are accepted only in order. */
 
 				to_network_layer(&r.info);                                         /* pass packet to_network_layer */
-				inc(frame_expected);                                               /* advance lower edge of receiver’s window */
+				inc(frame_expected);                                               /* advance lower edge of receiverÂ’s window */
 				nbuffered = nbuffered - 1;                                         /* one frame fewer buffered */
 
 
